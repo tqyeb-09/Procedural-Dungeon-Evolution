@@ -20,7 +20,7 @@ Welcome to my core programming showcase! This repository tracks my evolution fro
 ### 🔹 Day 4: Structural Transition: Mechanics Testing (`Dodge.exe.py`)
 *   **The Dodge Probability Engine:** Transformed standard turn combat into a probabilistic mechanics framework. There's a 20% chance (`random.randint(1, 5)`) where hits are completely nullified if the entity triggers the evasion mechanic.
 *   **Bleed Effect (DoT):** Designed a tracking algorithm for physical attacks over multiple turns for both entities (`sangerare_inamic`, `sangerare_jucator`). Applied a damage layer that ticks down round by round.
-*   **RNG on Crowd Control (RNG/CC):** Made a stun effect that triggers only on critical attacks that have a 20% chance (`randon.randint(1, 5)`).
+*   **RNG on Crowd Co ntrol (RNG/CC):** Made a stun effect that triggers only on critical attacks that have a 20% chance (`randon.randint(1, 5)`).
 *   **Early Defensive Programming Boundaries:** Introduced a boundary protection for entities hit points. Forcing negative integers directly to `0` for proper visual integrity during end-game status report.
 
 ### 🔹 Day 6: Resource Management, Cutscenes & Phase Transitions (`BOSS.FIGHT.3.0.py`)
@@ -28,3 +28,10 @@ Welcome to my core programming showcase! This repository tracks my evolution fro
 *   **State-Driven AI Attack Restriction:** Introduced a complex `dizzy` (disorientation) status modifier. When active, it forces the enemy AI to mutate its state machine, shrinking its available random attack vector selection from a pool of 5 to a restricted pool of 3 weaker actions.
 *   **Cinematic Pacing Engine:** Integrated the `time` module to break standard loops and construct artificial suspense intervals. Executed structured text-based cinematic cuts (`time.sleep()`) during heavy damage abilities to alter the game feeling and user immersion.
 *   **Energy Mechanic:** Added an energy system with a threshold (`energie = 300`), where the ultimate ability costs energy to use. The loop checks if you have enough energy before letting you cast the ability.
+
+### 🔹 Day 7-8: Advanced Combat Mechanics & Boss Phases (`1v1.FIGHT.4.0.py`)
+*   **Dynamic Energy Economy:** Integrated randomized energy regeneration using `random.choice()` and capped the maximum resource at `energy = 100`, and every move costs energy.
+*   **Illegal Action Penalties:** Implemented a system that actively penalizes invalid moves or bad choices (`if alegere >= or alegere <= 0`) by draining `20` energy from the player's pool.
+*   **Reactive Player Rage Mode:** Added a low-health check (`jucator_viata <= 0.30 * jucator_viata_maxima`) that activates `rage = True`, scaling up player damage when entering a critical survival state. Also added `rage_mesaj = False` that turns into `rage_mesaj = True` when the rage mode activates, so the `print()` where it tells that you entered rage mode shows up only once per fight in terminal.
+*   **Multi-Phase Boss Evolution:** Implemented a boss phase change; landing on specific threat roll (`atack_inamic == 10`) that triggers `berserk = True`, altering the boss's attack pool and increasing its damage output.
+*   **Layered Bleed Effect:** Expanded Damage over Time tracking by splitting bleed effects into two independent variables (`sangerare` and `sangerare_ultimata`) that ticks down separately
