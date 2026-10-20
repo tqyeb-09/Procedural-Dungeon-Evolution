@@ -20,7 +20,7 @@ Welcome to my core programming showcase! This repository tracks my evolution fro
 ### 🔹 Day 4: Structural Transition: Mechanics Testing (`Dodge.exe.py`)
 *   **The Dodge Probability Engine:** Transformed standard turn combat into a probabilistic mechanics framework. There's a 20% chance (`random.randint(1, 5)`) where hits are completely nullified if the entity triggers the evasion mechanic.
 *   **Bleed Effect (DoT):** Designed a tracking algorithm for physical attacks over multiple turns for both entities (`sangerare_inamic`, `sangerare_jucator`). Applied a damage layer that ticks down round by round.
-*   **RNG on Crowd Control (RNG/CC):** Made a stun effect that triggers only on critical attacks that have a 20% chance (`randon.randint(1, 5)`).
+*   **Crowd Control Mechanics (CC/RNG):** Made a stun effect that triggers only on critical attacks that have a 20% chance (`randon.randint(1, 5)`).
 *   **Early Defensive Programming Boundaries:** Introduced a boundary protection for entities hit points. Forcing negative integers directly to `0` for proper visual integrity during end-game status report.
 
 ### 🔹 Day 6: Resource Management, Cutscenes & Phase Transitions (`BOSS.FIGHT.3.0.py`)
